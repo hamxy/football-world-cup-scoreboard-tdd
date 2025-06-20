@@ -27,4 +27,10 @@ public class Game {
     public String getAwayName() {
         return away.getName();
     }
+
+
+    public void updateScore(int homeScore, int awayScore) {
+        this.homeScore = homeScore;
+        this.awayScore = awayScore;
+    }
 }

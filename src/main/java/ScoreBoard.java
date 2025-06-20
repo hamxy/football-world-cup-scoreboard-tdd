@@ -19,4 +19,17 @@ public class ScoreBoard {
     public List<Game> getSummary() {
         return new ArrayList<>(games);
     }
+
+    public void updateScore(String home, String away, int homeScore, int awayScore) {
+        var game = findGame(home, away);
+        game.updateScore(homeScore, awayScore);
+    }
+
+    private Game findGame(String home, String away) {
+        for (Game game : games) {
+            if (game.getHomeName().equalsIgnoreCase(home) && game.getAwayName().equalsIgnoreCase(away))
+                return game;
+        }
+        throw new IllegalArgumentException("Game not found: " + home + " vs " + away);
+    }
 }
