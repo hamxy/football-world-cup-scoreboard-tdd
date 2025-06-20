@@ -41,4 +41,16 @@ public class ScoreBoardTest {
         scoreBoard.startGame("Mexico", "Canada");
         assertThrows(IllegalArgumentException.class, () -> scoreBoard.startGame("England", "Canada"));
     }
+
+    @Test
+    public void shouldUpdateScore() {
+        scoreBoard.startGame("Mexico", "Canada");
+        scoreBoard.updateScore("Mexico", "Canada", 1, 0);
+        var game = scoreBoard.getSummary().getFirst();
+
+        assertAll(
+                () -> assertEquals(1, game.getHomeScore()),
+                () -> assertEquals(0, game.getAwayScore())
+        );
+    }
 }
