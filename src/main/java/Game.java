@@ -5,6 +5,9 @@ public class Game {
     private int awayScore;
 
     public Game(String home, String away) {
+        if (home.equalsIgnoreCase(away))
+            throw new IllegalArgumentException("Home and away are the same");
+
         this.home = new Team(home);
         this.away = new Team(away);
     }
