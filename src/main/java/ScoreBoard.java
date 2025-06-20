@@ -11,11 +11,9 @@ public class ScoreBoard {
     }
 
     private boolean isAlreadyPlaying(String team) {
-        for (Game game : games) {
-            if (game.getHomeName().equalsIgnoreCase(team) || game.getAwayName().equalsIgnoreCase(team))
-                return true;
-        }
-        return false;
+        return games.stream().anyMatch(
+                game -> game.getHomeName().equalsIgnoreCase(team) || game.getAwayName().equalsIgnoreCase(team)
+        );
     }
 
     public List<Game> getSummary() {
