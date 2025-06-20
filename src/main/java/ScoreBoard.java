@@ -21,6 +21,9 @@ public class ScoreBoard {
     }
 
     public void updateScore(String home, String away, int homeScore, int awayScore) {
+        if (homeScore < 0 || awayScore < 0)
+            throw new IllegalArgumentException("Score cannot be negative");
+
         var game = findGame(home, away);
         game.updateScore(homeScore, awayScore);
     }
