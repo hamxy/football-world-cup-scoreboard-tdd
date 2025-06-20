@@ -1,7 +1,11 @@
 public class Team {
-    private final String teamName;
+    private final String name;
 
     public Team(String teamName) {
-        this.teamName = teamName;
+        this.name = teamName;
+    }
+
+    public String getName() {
+        return name;
     }
 }

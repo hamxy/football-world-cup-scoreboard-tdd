@@ -19,4 +19,12 @@ public class Game {
     public int getAwayScore() {
         return awayScore;
     }
+
+    public String getHomeName() {
+        return home.getName();
+    }
+
+    public String getAwayName() {
+        return away.getName();
+    }
 }
