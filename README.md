@@ -25,7 +25,7 @@ This project was implemented fully using **TDD**, following the Red-Green-Refact
 2. **Green** – implement just enough to make the test pass
 3. **Refactor** – clean up the code without breaking functionality
 
-Also, I was trying to commit after completing each step of Red-Green-Refactor cycle to show my approach and progress. I believe this would be too often, and in real-world scenario I would probably commit after the whole cycle, not after each step.
+#### Also, I was trying to commit after completing each step of Red-Green-Refactor cycle to show my approach and progress. I believe this would be too often, and in real-world scenario I would probably commit after the whole cycle, not after each step.
 
 ---
 
