@@ -53,4 +53,12 @@ public class ScoreBoardTest {
                 () -> assertEquals(0, game.getAwayScore())
         );
     }
+
+    @Test
+    public void shouldThrowExceptionWhenScoreIsNegative() {
+        scoreBoard.startGame("Mexico", "Canada");
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> scoreBoard.updateScore("Mexico", "Canada", -1, 0));
+    }
 }
