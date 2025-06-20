@@ -35,4 +35,10 @@ public class ScoreBoardTest {
     public void shouldThrowExceptionWhenHomeAndAwayTeamsAreTheSame() {
         assertThrows(IllegalArgumentException.class, () -> scoreBoard.startGame("Mexico", "Mexico"));
     }
+
+    @Test
+    public void shouldThrowExceptionWhenTeamIsAlreadyPlaying() {
+        scoreBoard.startGame("Mexico", "Canada");
+        assertThrows(IllegalArgumentException.class, () -> scoreBoard.startGame("England", "Canada"));
+    }
 }
