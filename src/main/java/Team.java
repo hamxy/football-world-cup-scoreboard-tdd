@@ -1,5 +1,5 @@
 public class Team {
-    private String teamName;
+    private final String teamName;
 
     public Team(String teamName) {
         this.teamName = teamName;

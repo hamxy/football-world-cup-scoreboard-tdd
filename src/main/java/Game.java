@@ -1,9 +1,9 @@
 public class Game {
-    private Team home;
-    private Team away;
+    private final Team home;
+    private final Team away;
 
-    public Game(Team home, Team away) {
-        this.home = home;
-        this.away = away;
+    public Game(String home, String away) {
+        this.home = new Team(home);
+        this.away = new Team(away);
     }
 }

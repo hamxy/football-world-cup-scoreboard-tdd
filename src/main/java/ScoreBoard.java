@@ -2,13 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScoreBoard {
-    List<Game> games = new ArrayList<Game>();
+    private final List<Game> games = new ArrayList<>();
 
-    public void startGame(String homeTeamName, String awayTeamName) {
-        var home = new Team(homeTeamName);
-        var away = new Team(awayTeamName);
-        var game = new Game(home, away);
-        games.add(game);
+    public void startGame(String home, String away) {
+        games.add(new Game(home, away));
     }
 
     public List<Game> getSummary() {
