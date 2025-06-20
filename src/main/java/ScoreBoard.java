@@ -17,7 +17,9 @@ public class ScoreBoard {
     }
 
     public List<Game> getSummary() {
-        return new ArrayList<>(games);
+        List<Game> copy =  new ArrayList<>(games);
+        copy.sort(new GameComparator(copy));
+        return copy;
     }
 
     public void updateScore(String home, String away, int homeScore, int awayScore) {
