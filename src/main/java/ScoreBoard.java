@@ -35,4 +35,9 @@ public class ScoreBoard {
         }
         throw new IllegalArgumentException("Game not found: " + home + " vs " + away);
     }
+
+    public void finishGame(String home, String away) {
+        var game = findGame(home, away);
+        games.remove(game);
+    }
 }
