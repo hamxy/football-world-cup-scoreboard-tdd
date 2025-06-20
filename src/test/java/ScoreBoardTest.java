@@ -20,4 +20,15 @@ public class ScoreBoardTest {
         List<Game> games = scoreBoard.getSummary();
         assertEquals(1, games.size());
     }
+
+    @Test
+    public void shouldInitialScoreBeZero() {
+        scoreBoard.startGame("Mexico", "Canada");
+        var game = scoreBoard.getSummary().getFirst();
+
+        assertAll(
+                () -> assertEquals(0, game.getHomeScore()),
+                () -> assertEquals(0, game.getAwayScore())
+        );
+    }
 }
