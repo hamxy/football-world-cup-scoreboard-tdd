@@ -61,4 +61,12 @@ public class ScoreBoardTest {
                 IllegalArgumentException.class,
                 () -> scoreBoard.updateScore("Mexico", "Canada", -1, 0));
     }
+
+    @Test
+    public void shouldFinishGame() {
+        scoreBoard.startGame("Mexico", "Canada");
+        scoreBoard.finishGame("Mexico", "Canada");
+        assertEquals(0, scoreBoard.getSummary().size());
+    }
+
 }
